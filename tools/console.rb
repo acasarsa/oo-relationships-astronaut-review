@@ -14,16 +14,17 @@ astronaut3 = Astronaut.new("rob", "38", "spec4")
 shuttle1 = Shuttle.new("mod1", 2)
 shuttle2 = Shuttle.new("mod2", 2)
 shuttle3 = Shuttle.new("mod3", 2)
+shuttle4 = Shuttle.new("mod3", 2)
 
-date1 = "May 1st"
-date2 = 'June 2nd'
-date3 = "Jan 5th"
-date4 = "April 3rd"
+date1 = 1990
+date2 = 1994
+date3 = 1997
+date4 = 2017
 
 shuttle1.add_astronaut(astronaut1, date1)
 shuttle1.add_astronaut(astronaut2, date1)
-shuttle1.add_astronaut(astronaut3, date1)
-shuttle2.add_astronaut(astronaut1, date2)
+shuttle2.add_astronaut(astronaut3, date1)
+shuttle2.add_astronaut(astronaut1, date4)
 # mission1 = Mission.new(shuttle1, "", date1)
 # mission2 = Mission.new(shuttle1, "", date1)
 # mission3 = Mission.new(shuttle1, "", date1)

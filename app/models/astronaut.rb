@@ -1,6 +1,6 @@
 require "pry"
 class Astronaut
-    attr_accessor :name, :age, :specialty
+    attr_reader :name, :age, :specialty
     @@all = []
     def initialize(name,age,specialty)
         @name = name
@@ -12,7 +12,7 @@ class Astronaut
     def missions
         Mission.all.select do |mission| 
             mission.astronaut == self 
-        end
+        end.uniq
     end
 
     def shuttles
@@ -32,10 +32,13 @@ class Astronaut
     end
 
     def self.most_missions
+        self.all.max_by {|astronaut| astronaut.mission_count}
+    end
+
+    def self.top_three
+
+        self.all.max_by(3) {|astronaut| astronaut.mission_count}
         
-        bob = self.all.max_by {|astronaut| astronaut.mission_count}
-        puts "#{bob.name} has the most missions with #{bob.mission_count}"
-        bob
     end
 
     def self.all
